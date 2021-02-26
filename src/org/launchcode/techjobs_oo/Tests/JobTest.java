@@ -60,7 +60,7 @@ public class JobTest {
     public void testContainLabelAndData() {
         Job job = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String expected = " " + '\n' +
-                "ID: 1" + '\n' +
+                "ID: 3" + '\n' +
                 "Name: Product Tester" + '\n' +
                 "Employer: ACME" + '\n' +
                 "Location: Desert" + '\n' +
@@ -72,14 +72,14 @@ public class JobTest {
 
     @Test
     public void testEmptyFieldUnavailable() {
-        Job job = new Job(null ,  new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String expected = " " +
-                "ID: 1" + " " +
-                "Name: Data not available" + " " +
-                "Employer: ACME" + " " +
-                "Location: Desert" + " " +
-                "Position Type: Quality control" + " " +
-                "Core Competency: Persistence" + " " +
+        Job job = new Job("" ,  new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expected = " " + '\n' +
+                "ID: 5" +  '\n' +
+                "Name: Data not available" + '\n' +
+                "Employer: ACME" + '\n' +
+                "Location: Desert" + '\n' +
+                "Position Type: Quality control" + '\n' +
+                "Core Competency: Persistence" + '\n' +
                 " ";
         assertEquals(expected, job.toString());
     }
