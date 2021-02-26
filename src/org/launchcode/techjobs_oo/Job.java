@@ -36,6 +36,67 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
     @Override
+    public String toString(){
+        if (this.getName() == "") return " " + '\n' + "ID: " + this.getId() + '\n' +
+                "Name: Data not available" + '\n' +
+                "Employer: " + this.getEmployer() + '\n' +
+                "Location: " + this.getLocation() + '\n' +
+                "Position Type: " + this.getPositionType() + '\n' +
+                "Core Competency: " + this.getCoreCompetency()  + '\n' +
+                " ";
+        if (this.getEmployer().toString() == "") return " " + '\n' + "ID: " + this.getId() + '\n' +
+                "Name: " + this.getName() + '\n' +
+                "Employer: Data not available" + '\n' +
+                "Location: " + this.getLocation() + '\n' +
+                "Position Type: " + this.getPositionType() + '\n' +
+                "Core Competency: " + this.getCoreCompetency()  + '\n' +
+                " ";
+        if (this.getLocation().toString() == "") return  " " + '\n' + "ID: " + this.getId() + '\n' +
+        "Name: " + this.getName() + '\n' +
+                "Employer: " + this.getEmployer() + '\n' +
+                "Location: Data not available" + '\n' +
+                "Position Type: " + this.getPositionType() + '\n' +
+                "Core Competency: " + this.getCoreCompetency()  + '\n' +
+                " ";
+        if (this.getPositionType().toString() == "") return " " + '\n' + "ID: " + this.getId() + '\n' +
+                "Name: " + this.getName() + '\n' +
+                "Employer: " + this.getEmployer() + '\n' +
+                "Location: " + this.getLocation() + '\n' +
+                "Position Type: Data not available"  + '\n' +
+                "Core Competency: " + this.getCoreCompetency()  + '\n' +
+                " ";
+        if (this.getCoreCompetency().toString() == "") return " " + "ID: " + this.getId() + '\n' +
+                "Name: " + this.getName() + '\n' +
+                "Employer: " + this.getEmployer() + '\n' +
+                "Location: " + this.getLocation() + '\n' +
+                "Position Type: " + this.getPositionType() + '\n' +
+                "Core Competency: Data not available"  + '\n' +
+                " ";
+        else
+            return " "+ '\n' +
+                "ID: " + this.getId()+ '\n' +
+                "Name: " + this.getName()+ '\n' +
+                "Employer: " + this.getEmployer()+ '\n' +
+                "Location: " + this.getLocation()+ '\n' +
+                "Position Type: " + this.getPositionType()+ '\n' +
+                "Core Competency: " + this.getCoreCompetency() + '\n' +
+                " ";
+    }
+
+
+//    @Override
+//    public String toString() {
+//        return " "+ '\n' +
+//                " Id=" + id + '\n' +
+//                " Name='" + name + '\n' +
+//                " Employer=" + employer + '\n' +
+//                " Location=" + location + '\n' +
+//                " Position Type=" + positionType + '\n' +
+//                " Core Competency=" + coreCompetency + '\n' +
+//                " ";
+//    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if(!(o instanceof Job)) return false;

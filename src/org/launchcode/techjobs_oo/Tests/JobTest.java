@@ -49,6 +49,40 @@ public class JobTest {
         assertFalse(jobOne.equals(jobTwo));
 
     }
+
+//    @Test
+//    public void testJobReturnsBlankLine() {
+//        Job job = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        assertTrue(" " == job.toString());
+//    }
+
+    @Test
+    public void testContainLabelAndData() {
+        Job job = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expected = " " + '\n' +
+                "ID: 1" + '\n' +
+                "Name: Product Tester" + '\n' +
+                "Employer: ACME" + '\n' +
+                "Location: Desert" + '\n' +
+                "Position Type: Quality control" + '\n' +
+                "Core Competency: Persistence" + '\n' +
+                " ";
+        assertEquals(expected, job.toString());
+    }
+
+    @Test
+    public void testEmptyFieldUnavailable() {
+        Job job = new Job(null ,  new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expected = " " +
+                "ID: 1" + " " +
+                "Name: Data not available" + " " +
+                "Employer: ACME" + " " +
+                "Location: Desert" + " " +
+                "Position Type: Quality control" + " " +
+                "Core Competency: Persistence" + " " +
+                " ";
+        assertEquals(expected, job.toString());
+    }
 }
 
 
